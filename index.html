@@ -156,6 +156,17 @@ var totalTime = this.timings['look-ma-finish'] - this.timings['look-ma-im-start'
         </pre>
         <p>То есть это обычный массив из объектов. Каждый объект — отдельный ресурс. У каждого объекта есть три свойства. k — названия ключа в localStorage для этого ресурса. p — патч для ресурса, который сгенерировал vcdiff. s — чексумма для ресурса актуальной версии, чтобы потом можно было проверить правильность наложения патча на клиенте. Чексумма вычисляется по алгоритму Флетчера.</p>
         <br>
+        <pre class="fletcher">
+дано <span class="italic">&epsilon;</span>, &xscr;<span class="italic"><sub>0</sub></span>
+Инициализировать <span class="italic">H</span><sub>0</sub>
+<span class="italic">k</span> = 0
+<span class="bold">while</span>&boxV;&Del;&fnof;<span class="italic"><sub>k</sub></span>&boxV;><span class="italic">&epsilon;</span>
+  найти направление <span class="italic">p</span><span class="italic"><sub>k</sub></span> = -<span class="italic">C</span><span class="italic"><sub>k</sub></span>&Del;&fnof;<span class="italic"><sub>k</sub></span>
+  вычислить &xscr;<span class="italic"><sub>k+1</sub></span> = &xscr;<span class="italic"><sub>k</sub></span> + <span class="italic">&alpha;<sub>k</sub>p<sub>k</sub></span>,  &alpha;<sub>k</sub> удовлетворяет условиям Вольфе
+  обозначить <span class="italic">s<sub>k</sub></span> = &xscr;<span class="italic"><sub>k+1</sub></span> - &xscr;<span class="italic"><sub>k</sub></span> и <span class="italic">y<sub>k</sub></span> = &Del;&fnof;<span class="italic"><sub>k+1</sub></span> - &Del;&fnof;<span class="italic"><sub>k</sub></span>
+  вычислить <span class="italic">C</span><span class="italic"><sub>k+1</sub>
+  <span class="italic">k = k + 1</span>
+end</pre>
         <p>Алгоритм Бройдена — Флетчера — Гольдфарба — Шанно (BFGS) — итерационный метод численной оптимизации, предназначенный для нахождения локального максимума/минимума нелинейного функционала без ограничений.</p>
         <br>
         <p>Почему именно алгоритм Флетчера, а не другие популярные алгоритмы вроде:</p>
